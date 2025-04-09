@@ -5,43 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tropical Summer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Quicksand:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="background">
-    <img src="https://www.svgrepo.com/show/499887/palm-tree.svg" alt="Palm Tree" class="palm-tree" />
-    <img src="https://www.svgrepo.com/show/494258/wave.svg" alt="Wave" class="waves" />
+  <!-- Dark mode toggle -->
+  <button class="toggle-btn" onclick="toggleMode()">
+    <img id="toggle-icon" src="https://raw.githubusercontent.com/lipis/flag-icon-css/master/flags/4x3/sun.svg" alt="Toggle Mode" />
+  </button>
+
+  <div class="container">
+    <h1>Welcome to My Tropical Portfolio</h1>
+    <p>Feel the summer breeze as you explore my work!</p>
+    <a href="#projects" class="btn">View Projects</a>
   </div>
 
-  <header>
-    <h1>Welcome to My Tropical Portfolio</h1>
-    <button class="toggle-button">
-      <img src="https://www.svgrepo.com/show/13685/sun.svg" alt="Toggle Mode" />
-    </button>
-  </header>
-
-  <main>
-    <section class="about">
-      <h2>About Me</h2>
-      <p>Hi! I'm a passionate web developer creating bright and lively designs for summer vibes. Explore my projects below!</p>
-    </section>
-
-    <section class="projects">
-      <h2>My Projects</h2>
-      <div class="project-card">
-        <h3>Project One</h3>
-        <p>A sunny web app to brighten your day.</p>
-      </div>
-      <div class="project-card">
-        <h3>Project Two</h3>
-        <p>Wave-themed landing page for your next adventure.</p>
-      </div>
-    </section>
-  </main>
+  <section id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="card">
+      <h3>Beachside Web App</h3>
+      <p>A relaxing app inspired by ocean waves and palm trees.</p>
+    </div>
+    <div class="card">
+      <h3>Sunset Design System</h3>
+      <p>Components that capture the beauty of tropical sunsets.</p>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 My Tropical Portfolio. All rights reserved.</p>
+    <p>Made with sunshine and coconut water.</p>
   </footer>
+
+  <!-- Waves -->
+  <div class="waves">
+    <svg viewBox="0 0 120 28" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="waveGradient" gradientTransform="rotate(90)">
+          <stop offset="0%" stop-color="#10b981" />
+          <stop offset="100%" stop-color="#3ec6e0" />
+        </linearGradient>
+      </defs>
+      <path d="M0,20 C30,0 60,30 90,10 C120,-10 150,30 180,20 L180,30 L0,30 Z" fill="url(#waveGradient)">
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="-30 0" dur="8s" repeatCount="indefinite" />
+      </path>
+    </svg>
+  </div>
 
   <script src="script.js"></script>
 </body>
