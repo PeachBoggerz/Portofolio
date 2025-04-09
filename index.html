@@ -4,47 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tropical Summer Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Quicksand:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="background">
-    <img src="https://www.svgrepo.com/show/499887/palm-tree.svg" alt="Palm Tree" class="palm-tree" />
-    <img src="https://www.svgrepo.com/show/494258/wave.svg" alt="Wave" class="waves" />
-  </div>
-
   <header>
+    <div class="toggle-container">
+      <span class="sun-icon">☀</span>
+      <label class="switch">
+        <input type="checkbox" id="mode-toggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
     <h1>Welcome to My Tropical Portfolio</h1>
-    <button class="toggle-button">
-      <img src="https://www.svgrepo.com/show/13685/sun.svg" alt="Toggle Mode" />
-    </button>
   </header>
 
-  <main>
-    <section class="about">
-      <h2>About Me</h2>
-      <p>Hi! I'm a passionate web developer creating bright and lively designs for summer vibes. Explore my projects below!</p>
-    </section>
+  <section class="hero">
+    <p>Bringing summer vibes to the web!</p>
+  </section>
 
-    <section class="projects">
-      <h2>My Projects</h2>
-      <div class="projects-container">
-        <div class="project-card">
-          <h3>Project One</h3>
-          <p>A sunny web app to brighten your day.</p>
-        </div>
-        <div class="project-card">
-          <h3>Project Two</h3>
-          <p>Wave-themed landing page for your next adventure.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+  <section class="projects">
+    <h2>My Projects</h2>
+    <div class="project-list">
+      <div class="project-card">Project 1</div>
+      <div class="project-card">Project 2</div>
+      <div class="project-card">Project 3</div>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 My Tropical Portfolio. All rights reserved.</p>
+    <p>Made with sunshine and code!</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Background elements -->
+  <div class="waves"></div>
+  <div class="palm-tree"></div>
 </body>
 </html>
