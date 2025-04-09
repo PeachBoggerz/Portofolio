@@ -1,109 +1,205 @@
-/* Global Styles */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s ease;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #a8edea, #fed6e3);
-  background-image: url('https://www.svgrepo.com/show/354126/waves.svg'), url('https://www.svgrepo.com/show/171707/palm-tree.svg');
-  background-repeat: repeat-x, no-repeat;
-  background-position: bottom, top right;
-  background-size: cover, contain;
-  color: #033d3d;
-  transition: background 0.5s ease, color 0.5s ease;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #c2f0f7, #3ec6e0);
+    color: #064e3b;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* Dark Mode */
-body.dark-mode {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  background-image: url('https://www.svgrepo.com/show/354126/waves.svg'), url('https://www.svgrepo.com/show/171707/palm-tree.svg');
-  background-repeat: repeat-x, no-repeat;
-  background-position: bottom, top right;
-  background-size: cover, contain;
-  color: #e0f7fa;
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
-/* Toggle Button */
-.toggle-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  z-index: 1000;
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive;
+    color: #34c759;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px rgba(0, 102, 102, 0.3);
 }
 
-.toggle-container svg {
-  width: 24px;
-  height: 24px;
-  fill: #fbc02d;
+/* Text */
+p {
+    color: #064e3b;
+    margin-bottom: 1rem;
 }
 
-.toggle-container:hover {
-  background: rgba(255, 255, 255, 1);
+a {
+    color: #10b981;
+    text-decoration: none;
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 50px 20px;
+a:hover {
+    color: #34c759;
 }
 
-header h1 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 2.5em;
-  margin: 0;
+/* Button */
+.btn {
+    background-color: #10b981;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 102, 102, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Section */
-section {
-  text-align: center;
-  padding: 50px 20px;
+.btn:hover {
+    background-color: #34c759;
+    transform: translateY(-2px);
 }
 
-section h2 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 2em;
-  margin-bottom: 30px;
+/* Sections */
+.section {
+    padding: 4rem 0;
 }
 
-/* Projects */
-.project {
-  background: rgba(255, 255, 255, 0.7);
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 500px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+/* Card Style */
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 102, 102, 0.2);
+    margin-bottom: 2rem;
+    transition: background 0.6s ease, color 0.6s ease;
 }
 
-.project:hover {
-  transform: translateY(-5px);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 102, 102, 0.3);
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.3);
-  font-size: 0.9em;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #34c759;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* Waves */
+.waves {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 15vh;
+    z-index: -1;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: rgba(16, 185, 129, 0.4);
+    opacity: 0.6;
+    border-radius: 100%;
+    animation: wave-animation 8s linear infinite;
+}
+
+#wave1 {
+    bottom: 0;
+    left: -50%;
+}
+
+#wave2 {
+    bottom: 0;
+    left: -50%;
+    animation-delay: -4s;
+    opacity: 0.4;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8em;
-  }
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
 
-  section h2 {
-    font-size: 1.5em;
-  }
+    .container {
+        padding: 1rem;
+    }
+}
 
-  .project {
-    padding: 15px;
-  }
+/* Smooth fade mode transition */
+body, .card, footer {
+    transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* Sunset Mode (Dark Mode) */
+body.sunset-mode {
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+    color: #fff8f0;
+}
+
+body.sunset-mode h1,
+body.sunset-mode h2,
+body.sunset-mode h3 {
+    color: #ffd166;
+    text-shadow: 1px 1px rgba(255, 94, 77, 0.4);
+}
+
+body.sunset-mode p,
+body.sunset-mode a {
+    color: #ffe8d6;
+}
+
+body.sunset-mode .btn {
+    background-color: #ff6b6b;
+    color: white;
+    box-shadow: 0 4px 6px rgba(255, 94, 77, 0.2);
+}
+
+body.sunset-mode .btn:hover {
+    background-color: #f65c78;
+}
+
+body.sunset-mode .card {
+    background: #ffb997;
+    color: #fff8f0;
+}
+
+body.sunset-mode footer {
+    background-color: #f65c78;
+    color: white;
+}
+
+body.sunset-mode #wave1,
+body.sunset-mode #wave2 {
+    background: rgba(255, 255, 255, 0.3);
 }
