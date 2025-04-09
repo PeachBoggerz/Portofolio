@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Tropical Summer Portfolio</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tropical Summer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Quicksand:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
-<!-- Dark mode toggle -->
-  <button class="toggle-btn" onclick="toggleMode()">
-    <img id="toggle-icon" src="https://raw.githubusercontent.com/lipis/flag-icon-css/master/flags/4x3/sun.svg" alt="Toggle Mode" />
-  </button>
-<button class="toggle-btn">
-  <img id="toggle-icon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Toggle Mode" />
-</button>
+  <div class="background">
+    <img src="https://www.svgrepo.com/show/499887/palm-tree.svg" alt="Palm Tree" class="palm-tree" />
+    <img src="https://www.svgrepo.com/show/494258/wave.svg" alt="Wave" class="waves" />
+  </div>
 
-<div class="container">
-<h1>Welcome to My Tropical Portfolio</h1>
+  <header>
+    <h1>Welcome to My Tropical Portfolio</h1>
+    <button class="toggle-button">
+      <img src="https://www.svgrepo.com/show/13685/sun.svg" alt="Toggle Mode" />
+    </button>
+  </header>
+
+  <main>
+    <section class="about">
+      <h2>About Me</h2>
+      <p>Hi! I'm a passionate web developer creating bright and lively designs for summer vibes. Explore my projects below!</p>
+    </section>
+
+    <section class="projects">
+      <h2>My Projects</h2>
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A sunny web app to brighten your day.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Wave-themed landing page for your next adventure.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 My Tropical Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
