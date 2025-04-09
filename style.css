@@ -1,109 +1,146 @@
-/* Global Styles */
+/* Fonts and base setup */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #a8edea, #fed6e3);
-  background-image: url('https://www.svgrepo.com/show/354126/waves.svg'), url('https://www.svgrepo.com/show/171707/palm-tree.svg');
-  background-repeat: repeat-x, no-repeat;
-  background-position: bottom, top right;
-  background-size: cover, contain;
-  color: #033d3d;
-  transition: background 0.5s ease, color 0.5s ease;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #e0f7fa;
+  color: #034f48;
+  transition: background-color 0.5s, color 0.5s;
+  overflow-x: hidden;
 }
 
-/* Dark Mode */
-body.dark-mode {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  background-image: url('https://www.svgrepo.com/show/354126/waves.svg'), url('https://www.svgrepo.com/show/171707/palm-tree.svg');
-  background-repeat: repeat-x, no-repeat;
-  background-position: bottom, top right;
-  background-size: cover, contain;
-  color: #e0f7fa;
+h1, h2 {
+  font-family: 'Baloo 2', cursive;
 }
 
-/* Toggle Button */
-.toggle-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  z-index: 1000;
-}
-
-.toggle-container svg {
-  width: 24px;
-  height: 24px;
-  fill: #fbc02d;
-}
-
-.toggle-container:hover {
-  background: rgba(255, 255, 255, 1);
-}
-
-/* Header */
 header {
-  text-align: center;
-  padding: 50px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, #4fd1c5, #81e6d9);
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+  z-index: 10;
 }
 
 header h1 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 2.5em;
   margin: 0;
+  font-size: 1.8rem;
 }
 
-/* Section */
-section {
+.toggle-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.palm-tree {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  opacity: 0.7;
+  animation: sway 5s infinite ease-in-out;
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0.7;
+  animation: waveMove 8s infinite linear;
+}
+
+/* Animations */
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Main Content */
+main {
   text-align: center;
-  padding: 50px 20px;
+  padding: 2rem;
 }
 
-section h2 {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 2em;
-  margin-bottom: 30px;
+.about, .projects {
+  margin-bottom: 3rem;
 }
 
-/* Projects */
-.project {
-  background: rgba(255, 255, 255, 0.7);
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 500px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+.projects h2 {
+  text-align: center;
 }
 
-.project:hover {
+.project-card {
+  background-color: #b2f5ea;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 128, 128, 0.2);
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
   transform: translateY(-5px);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.3);
-  font-size: 0.9em;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #319795;
+  color: white;
+  padding: 1rem;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #0a3d3f;
+  color: #e0f7fa;
+}
+
+body.dark-mode header {
+  background: linear-gradient(45deg, #225e63, #1e7e8f);
+}
+
+body.dark-mode .project-card {
+  background-color: #285e61;
+  color: #e0f7fa;
+}
+
+body.dark-mode footer {
+  background-color: #1e4d4f;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
   header h1 {
-    font-size: 1.8em;
+    font-size: 1.2rem;
   }
 
-  section h2 {
-    font-size: 1.5em;
-  }
-
-  .project {
-    padding: 15px;
+  .project-card {
+    width: 90%;
   }
 }
