@@ -1,4 +1,4 @@
-/* Fonts and base setup */
+/* Base styles */
 body {
   margin: 0;
   padding: 0;
@@ -26,7 +26,8 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .toggle-button {
@@ -57,7 +58,7 @@ header h1 {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 200px;
+  width: 180px;
   opacity: 0.7;
   animation: sway 5s infinite ease-in-out;
 }
@@ -85,7 +86,7 @@ header h1 {
 /* Main Content */
 main {
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
 .about, .projects {
@@ -94,15 +95,22 @@ main {
 
 .projects h2 {
   text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .project-card {
   background-color: #b2f5ea;
-  margin: 1rem auto;
   padding: 1rem;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 128, 128, 0.2);
-  max-width: 300px;
+  width: 250px;
   transition: transform 0.3s;
 }
 
@@ -116,6 +124,7 @@ footer {
   background-color: #319795;
   color: white;
   padding: 1rem;
+  font-size: 0.9rem;
 }
 
 /* Dark mode */
@@ -137,13 +146,47 @@ body.dark-mode footer {
   background-color: #1e4d4f;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .toggle-button img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .palm-tree {
+    width: 120px;
+  }
+
+  .waves {
+    width: 120%;
+  }
+}
+
+@media (max-width: 480px) {
   header h1 {
     font-size: 1.2rem;
   }
 
   .project-card {
     width: 90%;
+  }
+
+  footer {
+    font-size: 0.8rem;
   }
 }
