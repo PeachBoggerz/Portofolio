@@ -1,9 +1,6 @@
-function toggleMode() {
-  document.body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-}
+const toggleButton = document.querySelector('.toggle-button');
+const body = document.body;
 
-// Load mode on page load
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-mode');
-}
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+});
