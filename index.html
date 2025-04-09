@@ -4,50 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tropical Summer Portfolio</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Quicksand:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <!-- Toggle Button -->
-  <div class="toggle-container" onclick="toggleMode()">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M12 4.354a1 1 0 0 1 1 0l.7.405 1.02-.17a1 1 0 0 1 1.128.763l.17 1.02.405.7a1 1 0 0 1 0 1l-.405.7.17 1.02a1 1 0 0 1-.763 1.128l-1.02.17-.7.405a1 1 0 0 1-1 0l-.7-.405-1.02.17a1 1 0 0 1-1.128-.763l-.17-1.02-.405-.7a1 1 0 0 1 0-1l.405-.7-.17-1.02a1 1 0 0 1 .763-1.128l1.02-.17.7-.405zM12 2a2 2 0 0 0-1.789 1.106l-.705.41-.996.165a2 2 0 0 0-1.53 1.53l-.165.996-.41.705A2 2 0 0 0 4 9c0 .347.09.674.253.957l.41.705.165.996a2 2 0 0 0 1.53 1.53l.996.165.705.41A2 2 0 0 0 8 20c.347 0 .674-.09.957-.253l.705-.41.996-.165a2 2 0 0 0 1.53-1.53l.165-.996.41-.705A2 2 0 0 0 20 16a2 2 0 0 0-1.106-1.789l-.41-.705-.165-.996a2 2 0 0 0-1.53-1.53l-.996-.165-.705-.41A2 2 0 0 0 12 2z"/>
-    </svg>
+  <div class="background">
+    <img src="https://www.svgrepo.com/show/499887/palm-tree.svg" alt="Palm Tree" class="palm-tree" />
+    <img src="https://www.svgrepo.com/show/494258/wave.svg" alt="Wave" class="waves" />
   </div>
 
-  <!-- Header -->
   <header>
     <h1>Welcome to My Tropical Portfolio</h1>
+    <button class="toggle-button">
+      <img src="https://www.svgrepo.com/show/13685/sun.svg" alt="Toggle Mode" />
+    </button>
   </header>
 
-  <!-- Main Content -->
-  <section>
-    <h2>My Projects</h2>
-    <div class="project">
-      <h3>Project One</h3>
-      <p>A tropical-themed web design project.</p>
-    </div>
-    <div class="project">
-      <h3>Project Two</h3>
-      <p>Responsive, animated portfolio design.</p>
-    </div>
-    <div class="project">
-      <h3>Project Three</h3>
-      <p>Colorful, lively website animations.</p>
-    </div>
-  </section>
+  <main>
+    <section class="about">
+      <h2>About Me</h2>
+      <p>Hi! I'm a passionate web developer creating bright and lively designs for summer vibes. Explore my projects below!</p>
+    </section>
 
-  <!-- Footer -->
+    <section class="projects">
+      <h2>My Projects</h2>
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A sunny web app to brighten your day.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Wave-themed landing page for your next adventure.</p>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    <p>Made with sunny vibes by [Your Name]</p>
+    <p>© 2025 My Tropical Portfolio. All rights reserved.</p>
   </footer>
-
-  <!-- Script -->
-  <script src="script.js"></script>
 </body>
 </html>
