@@ -1,203 +1,186 @@
-/* === Global Styles === */
-:root {
-  --primary-color: #2ebf91; /* Tropical Green */
-  --secondary-color: #00c3ff; /* Tropical Blue */
-  --background-color: #e0f7f4;
-  --text-color: #034732;
-  --accent-color: #5eead4;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@400;600&display=swap');
 
-  --sunset-background: #1e3a5f;
-  --sunset-primary: #f9a825;
-  --sunset-secondary: #ff7043;
-  --sunset-text: #fff8e1;
-  --sunset-accent: #fdd835;
-}
-
+/* Base styles */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.5s ease, color 0.5s ease;
+  background: linear-gradient(to bottom, #a8edea, #fed6e3);
+  color: #034732;
+  transition: background 0.5s, color 0.5s;
   overflow-x: hidden;
 }
 
-/* Sunset Mode */
-body.sunset-mode {
-  background-color: var(--sunset-background);
-  color: var(--sunset-text);
+/* Toggle dark mode */
+body.dark-mode {
+  background: linear-gradient(to bottom, #003b36, #051923);
+  color: #c2f0c2;
 }
 
-/* Header */
+/* Header styles */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #a8edea, #fed6e3);
+  color: #034732;
   position: relative;
-  z-index: 2;
+  overflow: hidden;
+}
+
+body.dark-mode header {
+  background: linear-gradient(to right, #003b36, #051923);
+  color: #c2f0c2;
 }
 
 header h1 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 3em;
   margin: 0;
-  font-size: 2.5rem;
+  animation: sway 3s infinite ease-in-out;
 }
 
-/* Toggle Button */
-.toggle-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  width: 40px;
-  height: 40px;
-}
-
-.toggle-btn img {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease;
-}
-
-.toggle-btn:hover img {
-  transform: rotate(45deg) scale(1.1);
-}
-
-/* Section Styles */
+/* Section styles */
 section {
-  padding: 60px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
 
 section h2 {
-  font-size: 2.5rem;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2.5em;
   margin-bottom: 20px;
-  font-family: 'Pacifico', cursive;
-  color: var(--primary-color);
-}
-
-body.sunset-mode section h2 {
-  color: var(--sunset-primary);
-}
-
-/* Center My Projects header */
-.projects h2 {
   text-align: center;
 }
 
-/* About Section */
-.about p {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* Project Cards */
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.project-card {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+/* Project cards */
+.project {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
   padding: 20px;
-  width: 280px;
-  transition: transform 0.3s, background-color 0.3s;
+  width: 250px;
+  transition: transform 0.3s, background 0.3s;
 }
 
-body.sunset-mode .project-card {
-  background-color: #2c3e50;
-  color: white;
+body.dark-mode .project {
+  background: rgba(3, 71, 50, 0.7);
+  color: #c2f0c2;
 }
 
-.project-card:hover {
+.project:hover {
   transform: translateY(-10px);
-}
-
-/* Contact Section */
-.contact a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-body.sunset-mode .contact a {
-  color: var(--sunset-accent);
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  color: white;
+  background: linear-gradient(to right, #a8edea, #fed6e3);
+  color: #034732;
 }
 
-/* Waves and Palms */
+body.dark-mode footer {
+  background: linear-gradient(to right, #003b36, #051923);
+  color: #c2f0c2;
+}
+
+/* Waves background */
 .waves {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
+  z-index: 0;
+}
+
+header::after {
+  content: "";
+  background: url('waves.svg') repeat-x;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: -1;
+  animation: wave 4s infinite linear;
+}
+
+/* Palm tree background */
+header::before {
+  content: "";
+  background: url('palm.svg') no-repeat center;
+  background-size: contain;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  width: 150px;
   height: 150px;
-  background: url('https://i.ibb.co/6YYrbLx/waves.png') repeat-x;
-  background-size: cover;
-  animation: waveAnimation 10s linear infinite;
+  opacity: 0.8;
   z-index: 1;
 }
 
-@keyframes waveAnimation {
+/* Toggle button */
+.toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ffffffcc;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
+  z-index: 1000;
+}
+
+.toggle-container:hover {
+  background: #a8edea;
+}
+
+.toggle-container svg {
+  width: 24px;
+  height: 24px;
+  fill: #034732;
+  transition: transform 0.3s;
+}
+
+body.dark-mode .toggle-container {
+  background: #003b36;
+}
+
+body.dark-mode .toggle-container svg {
+  fill: #c2f0c2;
+}
+
+/* Animations */
+@keyframes wave {
   0% { background-position-x: 0; }
   100% { background-position-x: 1000px; }
 }
 
-.palms {
-  position: absolute;
-  bottom: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  z-index: 1;
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-section h2 {
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
+/* Responsive design */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2em;
   }
 
-  .projects {
-    flex-direction: column;
-    align-items: center;
+  section h2 {
+    font-size: 1.8em;
   }
 
-  .palms {
-    width: 150px;
+  .project {
+    width: 90%;
   }
 
-  section {
-    padding: 40px 10px;
+  header::before {
+    width: 100px;
+    height: 100px;
   }
 }
