@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tropical Summer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(to bottom, #FFDEE9, #B5FFFC);
+      --header-gradient: linear-gradient(to right, #FDE68A, #FBCFE8, #FDBA74);
+      --footer-gradient: linear-gradient(to right, #FDE68A, #FBCFE8, #FDBA74);
+      --text-color: #374151;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      transition: all 0.5s ease;
+    }
+
+    h1, h2 {
+      font-family: 'Pacifico', cursive;
+    }
+
+    /* Animated waves */
+    .wave {
+      animation: wave 5s infinite linear;
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Floating elements animation */
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Sunset mode */
+    .sunset-mode {
+      --bg-gradient: linear-gradient(to bottom, #FFB347, #FFCC33);
+      --header-gradient: linear-gradient(to right, #FF7E5F, #FEB47B);
+      --footer-gradient: linear-gradient(to right, #FF7E5F, #FEB47B);
+      --text-color: #1F2937;
+      background: var(--bg-gradient);
+    }
+  </style>
+</head>
+<body class="text-gray-800 transition-all duration-500">
+
+  <!-- Header -->
+  <header class="text-center py-10 shadow-lg" style="background: var(--header-gradient);">
+    <h1 class="text-4xl text-white drop-shadow-md">Hello, I'm [Your Name]!</h1>
+    <p class="text-xl text-white mt-2">Welcome to my tropical summer portfolio!</p>
+    <button onclick="toggleSunsetMode()" class="mt-4 bg-white text-yellow-500 px-4 py-2 rounded-full shadow hover:scale-105 transition-transform">
+      Toggle Sunset Mode
+    </button>
+  </header>
+
+  <!-- Waves -->
+  <div class="relative">
+    <img src="https://svgshare.com/i/ugS.svg" alt="Wave" class="wave absolute top-0 left-0 w-full">
+    <img src="https://svgshare.com/i/ugS.svg" alt="Wave" class="wave absolute top-0 left-full w-full">
+  </div>
+
+  <!-- About Me Section -->
+  <section class="py-12 px-4 text-center">
+    <img src="https://img.icons8.com/emoji/96/palm-tree.png" alt="Palm Tree" class="mx-auto mb-4 float">
+    <h2 class="text-3xl mb-4 text-pink-600">About Me</h2>
+    <p class="max-w-xl mx-auto">I'm a passionate developer who loves coding as much as I love the summer sun! Here you'll find my projects, my journey, and how to get in touch.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="py-12 bg-blue-100">
+    <h2 class="text-3xl text-yellow-600 mb-6 text-center">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:scale-105 transition-transform">
+        <h3 class="text-xl text-pink-500 mb-2">Project One</h3>
+        <p>Brief description of your amazing project!</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:scale-105 transition-transform">
+        <h3 class="text-xl text-pink-500 mb-2">Project Two</h3>
+        <p>Another cool project description goes here.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:scale-105 transition-transform">
+        <h3 class="text-xl text-pink-500 mb-2">Project Three</h3>
+        <p>Something tropical and vibrant!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-12 text-center">
+    <img src="https://img.icons8.com/emoji/96/tropical-drink.png" alt="Tropical Drink" class="mx-auto mb-4 float">
+    <h2 class="text-3xl text-pink-600 mb-4">Get in Touch</h2>
+    <p class="mb-6">Let's connect and create something awesome!</p>
+    <div class="flex justify-center space-x-6">
+      <a href="#" class="text-pink-500 hover:text-pink-700 transition-colors">
+        <svg class="w-8 h-8 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M..." /></svg> GitHub
+      </a>
+      <a href="#" class="text-pink-500 hover:text-pink-700 transition-colors">
+        <svg class="w-8 h-8 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M..." /></svg> LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-white" style="background: var(--footer-gradient);">
+    <p>Made with sunshine and code by [Your Name]</p>
+  </footer>
+
+  <!-- Sunset Mode Script -->
+  <script>
+    function toggleSunsetMode() {
+      document.body.classList.toggle('sunset-mode');
+    }
+  </script>
+
+</body>
+</html>
