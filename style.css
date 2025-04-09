@@ -1,146 +1,203 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+/* === Global Styles === */
+:root {
+  --primary-color: #2ebf91; /* Tropical Green */
+  --secondary-color: #00c3ff; /* Tropical Blue */
+  --background-color: #e0f7f4;
+  --text-color: #034732;
+  --accent-color: #5eead4;
 
-/* Base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.4s ease;
+  --sunset-background: #1e3a5f;
+  --sunset-primary: #f9a825;
+  --sunset-secondary: #ff7043;
+  --sunset-text: #fff8e1;
+  --sunset-accent: #fdd835;
 }
 
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #c2f0f7, #3ec6e0);
-  color: #064e3b;
-  line-height: 1.6;
-  min-height: 100vh;
-  position: relative;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
 }
 
-/* Container */
-.container {
-  text-align: center;
-  padding: 4rem 1rem;
+/* Sunset Mode */
+body.sunset-mode {
+  background-color: var(--sunset-background);
+  color: var(--sunset-text);
 }
 
-h1, h2, h3 {
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
   font-family: 'Pacifico', cursive;
-  color: #34c759;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px rgba(0, 102, 102, 0.3);
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-p {
-  margin-bottom: 1rem;
-  color: #064e3b;
-}
-
-a {
-  color: #10b981;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #34c759;
-}
-
-/* Buttons */
-.btn {
-  background: #10b981;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 4px 6px rgba(0, 102, 102, 0.2);
-}
-
-.btn:hover {
-  background: #34c759;
-}
-
-/* Cards */
-.card {
-  background: white;
-  margin: 1rem auto;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 400px;
-  box-shadow: 0 4px 6px rgba(0, 102, 102, 0.2);
-}
-
-footer {
-  background: #34c759;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
-/* Toggle button */
+/* Toggle Button */
 .toggle-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
   background: none;
   border: none;
   cursor: pointer;
+  outline: none;
+  width: 40px;
+  height: 40px;
 }
 
 .toggle-btn img {
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
 }
 
-/* Waves */
+.toggle-btn:hover img {
+  transform: rotate(45deg) scale(1.1);
+}
+
+/* Section Styles */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Pacifico', cursive;
+  color: var(--primary-color);
+}
+
+body.sunset-mode section h2 {
+  color: var(--sunset-primary);
+}
+
+/* Center My Projects header */
+.projects h2 {
+  text-align: center;
+}
+
+/* About Section */
+.about p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Project Cards */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  width: 280px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+body.sunset-mode .project-card {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Contact Section */
+.contact a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+body.sunset-mode .contact a {
+  color: var(--sunset-accent);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+/* Waves and Palms */
 .waves {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  z-index: -1;
-  overflow: hidden;
-  line-height: 0;
+  height: 150px;
+  background: url('https://i.ibb.co/6YYrbLx/waves.png') repeat-x;
+  background-size: cover;
+  animation: waveAnimation 10s linear infinite;
+  z-index: 1;
 }
 
-.waves svg {
-  width: 100%;
-  height: 100px;
+@keyframes waveAnimation {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 1000px; }
 }
 
-/* Sunset Mode (dark mode) */
-body.sunset-mode {
-  background: linear-gradient(to bottom, #ff7e5f, #feb47b);
-  color: #fff8f0;
+.palms {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  z-index: 1;
 }
 
-body.sunset-mode h1,
-body.sunset-mode h2,
-body.sunset-mode h3 {
-  color: #ffd166;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-body.sunset-mode p,
-body.sunset-mode a {
-  color: #ffe8d6;
-}
-
-body.sunset-mode .btn {
-  background: #ff6b6b;
-}
-
-body.sunset-mode footer {
-  background: #f65c78;
+section h2 {
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
+  header {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .container {
-    padding: 2rem 1rem;
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .palms {
+    width: 150px;
+  }
+
+  section {
+    padding: 40px 10px;
   }
 }
