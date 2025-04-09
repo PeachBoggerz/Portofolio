@@ -1,205 +1,54 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tropical Summer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Dark mode toggle -->
+  <button class="toggle-btn" onclick="toggleMode()">
+    <img id="toggle-icon" src="https://raw.githubusercontent.com/lipis/flag-icon-css/master/flags/4x3/sun.svg" alt="Toggle Mode" />
+  </button>
 
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all 0.4s ease;
-}
+  <div class="container">
+    <h1>Welcome to My Tropical Portfolio</h1>
+    <p>Feel the summer breeze as you explore my work!</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </div>
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #c2f0f7, #3ec6e0);
-    color: #064e3b;
-    line-height: 1.6;
-    min-height: 100vh;
-    background-attachment: fixed;
-    overflow-x: hidden;
-    position: relative;
-}
+  <section id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="card">
+      <h3>Beachside Web App</h3>
+      <p>A relaxing app inspired by ocean waves and palm trees.</p>
+    </div>
+    <div class="card">
+      <h3>Sunset Design System</h3>
+      <p>Components that capture the beauty of tropical sunsets.</p>
+    </div>
+  </section>
 
-/* Container */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem 1rem;
-    text-align: center;
-}
+  <footer>
+    <p>Made with sunshine and coconut water.</p>
+  </footer>
 
-/* Headings */
-h1, h2, h3 {
-    font-family: 'Pacifico', cursive;
-    color: #34c759;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px rgba(0, 102, 102, 0.3);
-}
+  <!-- Waves -->
+  <div class="waves">
+    <svg viewBox="0 0 120 28" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="waveGradient" gradientTransform="rotate(90)">
+          <stop offset="0%" stop-color="#10b981" />
+          <stop offset="100%" stop-color="#3ec6e0" />
+        </linearGradient>
+      </defs>
+      <path d="M0,20 C30,0 60,30 90,10 C120,-10 150,30 180,20 L180,30 L0,30 Z" fill="url(#waveGradient)">
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="-30 0" dur="8s" repeatCount="indefinite" />
+      </path>
+    </svg>
+  </div>
 
-/* Text */
-p {
-    color: #064e3b;
-    margin-bottom: 1rem;
-}
-
-a {
-    color: #10b981;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #34c759;
-}
-
-/* Button */
-.btn {
-    background-color: #10b981;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 102, 102, 0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-    background-color: #34c759;
-    transform: translateY(-2px);
-}
-
-/* Sections */
-.section {
-    padding: 4rem 0;
-}
-
-/* Card Style */
-.card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 102, 102, 0.2);
-    margin-bottom: 2rem;
-    transition: background 0.6s ease, color 0.6s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 102, 102, 0.3);
-}
-
-/* Footer */
-footer {
-    background-color: #34c759;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    transition: background 0.6s ease, color 0.6s ease;
-}
-
-/* Waves */
-.waves {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 15vh;
-    z-index: -1;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.wave {
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    background: rgba(16, 185, 129, 0.4);
-    opacity: 0.6;
-    border-radius: 100%;
-    animation: wave-animation 8s linear infinite;
-}
-
-#wave1 {
-    bottom: 0;
-    left: -50%;
-}
-
-#wave2 {
-    bottom: 0;
-    left: -50%;
-    animation-delay: -4s;
-    opacity: 0.4;
-}
-
-@keyframes wave-animation {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(50%);
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    .container {
-        padding: 1rem;
-    }
-}
-
-/* Smooth fade mode transition */
-body, .card, footer {
-    transition: background 0.6s ease, color 0.6s ease;
-}
-
-/* Sunset Mode (Dark Mode) */
-body.sunset-mode {
-    background: linear-gradient(to bottom, #ff7e5f, #feb47b);
-    color: #fff8f0;
-}
-
-body.sunset-mode h1,
-body.sunset-mode h2,
-body.sunset-mode h3 {
-    color: #ffd166;
-    text-shadow: 1px 1px rgba(255, 94, 77, 0.4);
-}
-
-body.sunset-mode p,
-body.sunset-mode a {
-    color: #ffe8d6;
-}
-
-body.sunset-mode .btn {
-    background-color: #ff6b6b;
-    color: white;
-    box-shadow: 0 4px 6px rgba(255, 94, 77, 0.2);
-}
-
-body.sunset-mode .btn:hover {
-    background-color: #f65c78;
-}
-
-body.sunset-mode .card {
-    background: #ffb997;
-    color: #fff8f0;
-}
-
-body.sunset-mode footer {
-    background-color: #f65c78;
-    color: white;
-}
-
-body.sunset-mode #wave1,
-body.sunset-mode #wave2 {
-    background: rgba(255, 255, 255, 0.3);
-}
+  <script src="script.js"></script>
+</body>
+</html>
