@@ -4,40 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tropical Summer Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="toggle-container">
-      <span class="sun-icon">☀</span>
-      <label class="switch">
-        <input type="checkbox" id="mode-toggle" />
-        <span class="slider"></span>
-      </label>
-    </div>
+  <!-- Dark mode toggle -->
+  <button class="toggle-btn" onclick="toggleMode()">
+    <img id="toggle-icon" src="https://raw.githubusercontent.com/lipis/flag-icon-css/master/flags/4x3/sun.svg" alt="Toggle Mode" />
+  </button>
+
+  <div class="container">
     <h1>Welcome to My Tropical Portfolio</h1>
-  </header>
+    <p>Feel the summer breeze as you explore my work!</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </div>
 
-  <section class="hero">
-    <p>Bringing summer vibes to the web!</p>
-  </section>
-
-  <section class="projects">
+  <section id="projects" class="section">
     <h2>My Projects</h2>
-    <div class="project-list">
-      <div class="project-card">Project 1</div>
-      <div class="project-card">Project 2</div>
-      <div class="project-card">Project 3</div>
+    <div class="card">
+      <h3>Beachside Web App</h3>
+      <p>A relaxing app inspired by ocean waves and palm trees.</p>
+    </div>
+    <div class="card">
+      <h3>Sunset Design System</h3>
+      <p>Components that capture the beauty of tropical sunsets.</p>
     </div>
   </section>
 
   <footer>
-    <p>Made with sunshine and code!</p>
+    <p>Made with sunshine and coconut water.</p>
   </footer>
 
-  <!-- Background elements -->
-  <div class="waves"></div>
-  <div class="palm-tree"></div>
+  <!-- Waves -->
+  <div class="waves">
+    <svg viewBox="0 0 120 28" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="waveGradient" gradientTransform="rotate(90)">
+          <stop offset="0%" stop-color="#10b981" />
+          <stop offset="100%" stop-color="#3ec6e0" />
+        </linearGradient>
+      </defs>
+      <path d="M0,20 C30,0 60,30 90,10 C120,-10 150,30 180,20 L180,30 L0,30 Z" fill="url(#waveGradient)">
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="-30 0" dur="8s" repeatCount="indefinite" />
+      </path>
+    </svg>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
