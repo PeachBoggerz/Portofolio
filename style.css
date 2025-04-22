@@ -66,13 +66,32 @@ a:hover {
 }
 
 #projects section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    width: fit-content;
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+        "portrait1 portrait2"
+        "landscape landscape";
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 0px;
 }
 
 #projects img {
-    max-width: 320px;
+    width: 100%;
+}
+
+.portrait1 {
+    grid-area: portrait1;
+}
+
+.portrait2 {
+    grid-area: portrait2;
+}
+
+.landscape {
+    grid-area: landscape;
 }
 
 /* Cards */
@@ -157,4 +176,8 @@ body.sunset-mode footer {
   .container {
     padding: 2rem 1rem;
   }
+
+  .card {
+    padding: 1rem;
+    }
 }
